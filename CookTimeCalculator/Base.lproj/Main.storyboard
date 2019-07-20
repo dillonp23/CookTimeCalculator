@@ -25,7 +25,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="T6X-V6-hpa">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ex-Yn-tKX">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ex-Yn-tKX">
                                                 <rect key="frame" x="0.0" y="0.0" width="87" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -42,7 +42,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pFe-0g-ryA">
                                         <rect key="frame" x="0.0" y="30" width="390" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cook Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3Q-IU-TOl">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cook Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3Q-IU-TOl">
                                                 <rect key="frame" x="0.0" y="0.0" width="87" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -74,6 +74,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="aaB-u9-2Hp" firstAttribute="top" secondItem="pFe-0g-ryA" secondAttribute="bottom" constant="40" id="14h-bf-DJd"/>
+                                    <constraint firstItem="1Ex-Yn-tKX" firstAttribute="centerX" secondItem="M3Q-IU-TOl" secondAttribute="centerX" id="bBa-Ui-dyV"/>
                                     <constraint firstItem="va3-FB-BOs" firstAttribute="leading" secondItem="OUf-KX-26L" secondAttribute="leading" id="gfj-0S-g5E"/>
                                 </constraints>
                             </stackView>
@@ -115,21 +116,30 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Mesage!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSS-HD-QvS">
+                                <rect key="frame" x="153.5" y="593" width="107.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0cX-5a-uG5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1KI-sv-fos"/>
                             <constraint firstItem="2Yy-Oo-1Ii" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7pp-Au-ceJ"/>
                             <constraint firstItem="0cX-5a-uG5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pnq-Nu-1Xv"/>
+                            <constraint firstItem="qSS-HD-QvS" firstAttribute="top" secondItem="2Yy-Oo-1Ii" secondAttribute="bottom" constant="60" id="amQ-kR-FWv"/>
                             <constraint firstItem="Cmz-Qm-dRd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="cuH-re-Oa1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cmz-Qm-dRd" secondAttribute="trailing" constant="12" id="dxc-tr-YTH"/>
                             <constraint firstItem="2Yy-Oo-1Ii" firstAttribute="top" secondItem="0cX-5a-uG5" secondAttribute="bottom" constant="40" id="oki-Zd-0Fn"/>
                             <constraint firstItem="Cmz-Qm-dRd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="tY2-LN-EKr"/>
+                            <constraint firstItem="qSS-HD-QvS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uvS-a7-b9H"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="cookTimeLabel" destination="M3Q-IU-TOl" id="XTM-Uf-Ndk"/>
+                        <outlet property="errorMessageLabel" destination="qSS-HD-QvS" id="RHE-DV-rZW"/>
                         <outlet property="hoursButton" destination="1Eh-ae-L40" id="oxr-wM-RQy"/>
                         <outlet property="kilogramsButton" destination="oib-OR-jjz" id="Rnj-qY-01M"/>
                         <outlet property="minutesButton" destination="BY3-zj-6qr" id="y2d-jg-dwX"/>
@@ -141,6 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="92.410714285714278"/>
         </scene>
     </scenes>
 </document>

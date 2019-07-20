@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var kilogramsButton: UIButton!
     @IBOutlet weak var hoursButton: UIButton!
     @IBOutlet weak var minutesButton: UIButton!
+    @IBOutlet weak var errorMessageLabel: UILabel!
     
     // MARK: - Properites
     
@@ -44,6 +45,7 @@ class ViewController: UIViewController {
         minutesButton.isSelected = true
         weightLabel.text = "Weight (lbs):"
         cookTimeLabel.text = "Cook Time (minutes):"
+        errorMessageLabel.text = nil
     }
     
     func calculateCookTime(with weight: Double, from unit: Weight) -> Double {
@@ -86,6 +88,12 @@ class ViewController: UIViewController {
         } else {
             let cookTimeInHours = convertToHours(minutes: cookTimeMinutes)
             timeToCookTextField.text = "\(cookTimeInHours)"
+        }
+        if weight < 1 {
+            errorMessageLabel.text = "The turkey's gotta be at least 1 lb or kg!"
+            timeToCookTextField.text = nil
+        } else {
+            errorMessageLabel.text = nil
         }
     }
     
