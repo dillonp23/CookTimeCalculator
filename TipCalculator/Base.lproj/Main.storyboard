@@ -92,6 +92,26 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="2Yy-Oo-1Ii">
+                                <rect key="frame" x="152" y="491" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Eh-ae-L40">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
+                                        <state key="normal" title="Hours"/>
+                                        <connections>
+                                            <action selector="hoursButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aEy-LK-1ZH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BY3-zj-6qr">
+                                        <rect key="frame" x="54" y="0.0" width="55" height="30"/>
+                                        <state key="normal" title="Minutes"/>
+                                        <connections>
+                                            <action selector="minutesButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uqj-yg-oav"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -105,7 +125,9 @@
                     </view>
                     <connections>
                         <outlet property="cookTimeLabel" destination="M3Q-IU-TOl" id="XTM-Uf-Ndk"/>
+                        <outlet property="hoursButton" destination="1Eh-ae-L40" id="oxr-wM-RQy"/>
                         <outlet property="kilogramsButton" destination="oib-OR-jjz" id="Rnj-qY-01M"/>
+                        <outlet property="minutesButton" destination="BY3-zj-6qr" id="y2d-jg-dwX"/>
                         <outlet property="poundsButton" destination="W06-in-Kef" id="zMg-xe-XTR"/>
                         <outlet property="timeToCookTextField" destination="va3-FB-BOs" id="RCN-gN-9dG"/>
                         <outlet property="weightLabel" destination="1Ex-Yn-tKX" id="eau-wt-1P4"/>

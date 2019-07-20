@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var timeToCookTextField: UITextField!
     @IBOutlet weak var poundsButton: UIButton!
     @IBOutlet weak var kilogramsButton: UIButton!
+    @IBOutlet weak var hoursButton: UIButton!
+    @IBOutlet weak var minutesButton: UIButton!
     
     // MARK: - Properites
     
@@ -39,6 +41,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         poundsButton.isSelected = true
+        minutesButton.isSelected = true
         weightLabel.text = "Weight (lbs):"
         cookTimeLabel.text = "Cook Time (minutes):"
     }
@@ -46,7 +49,7 @@ class ViewController: UIViewController {
     func calculateCookTime(with weight: Double, from unit: Weight) -> Double {
         var cookTime: Double
         if weightUnit == .pounds {
-            if weight > 1 {
+            if weight >= 1 {
                 cookTime = weight * 15
             } else {
                 cookTime = 0
@@ -54,7 +57,7 @@ class ViewController: UIViewController {
         } else {
             if weight >= 4 {
                 cookTime = weight * 20 + 90
-            } else if weight > 1 {
+            } else if weight >= 1 {
                 cookTime = weight * 20 + 70
             } else {
                 cookTime = 0
@@ -102,6 +105,22 @@ class ViewController: UIViewController {
         calculateCookTimePressed(sender)
     }
     
-
+    @IBAction func hoursButtonSelected(_ sender: Any) {
+        guard let hoursButton = sender as? UIButton else { return }
+        hoursButton.isSelected.toggle()
+        minutesButton.isSelected = false
+        cookTimeLabel.text = "Cook Time (Hours):"
+        timeUnit = .hours
+        calculateCookTimePressed(sender)
+    }
+    
+    @IBAction func minutesButtonSelected(_ sender: Any) {
+        guard let minutesButton = sender as? UIButton else { return }
+        minutesButton.isSelected.toggle()
+        hoursButton.isSelected = false
+        cookTimeLabel.text = "Cook Time (Minutes):"
+        timeUnit = .minutes
+        calculateCookTimePressed(sender)
+        }
 }
 
