@@ -26,7 +26,13 @@ class ViewController: UIViewController {
         case kilograms
     }
     
-    var unit: Weight = .pounds // Default unit used for calculation is in pounds
+    enum Time {
+        case minutes
+        case hours
+    }
+    
+    var weightUnit: Weight = .pounds // Default unit used for calculation is in pounds
+    var timeUnit: Time = .minutes // Default used is minutes
     
     // MARK: - Functions
     
@@ -34,21 +40,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         poundsButton.isSelected = true
         weightLabel.text = "Weight (lbs):"
+        cookTimeLabel.text = "Cook Time (minutes):"
     }
     
     func calculateCookTime(with weight: Double, from unit: Weight) -> Double {
         var cookTime: Double
-        
-        if unit == .pounds {
-            cookTime = weight * 15
+        if weightUnit == .pounds {
+            if weight > 1 {
+                cookTime = weight * 15
+            } else {
+                cookTime = 0
+            }
         } else {
             if weight >= 4 {
                 cookTime = weight * 20 + 90
-            } else {
+            } else if weight > 1 {
                 cookTime = weight * 20 + 70
+            } else {
+                cookTime = 0
             }
         }
-        
         return cookTime
     }
     
@@ -58,25 +69,37 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calculateCookTimePressed(_ sender: Any) {
-         guard let weightString = weightTextField.text, let weight = Double(weightString) else { return }
+         guard let weightString = weightTextField.text,
+            let weight = Double(weightString) else { return }
         
         if poundsButton.isSelected {
-            unit = .pounds
+            weightUnit = .pounds
         } else {
-            unit = .kilograms
+            weightUnit = .kilograms
         }
-        
-        let cookTimeDouble = calculateCookTime(with: weight, from: unit)
-        let cookTimeInHours = convertToHours(minutes: cookTimeDouble)
-        
-        timeToCookTextField.text = "\(cookTimeInHours)"
-        
+        let cookTimeMinutes = calculateCookTime(with: weight, from: weightUnit)
+        if timeUnit == .minutes {
+            timeToCookTextField.text = "\(cookTimeMinutes)"
+        } else {
+            let cookTimeInHours = convertToHours(minutes: cookTimeMinutes)
+            timeToCookTextField.text = "\(cookTimeInHours)"
+        }
     }
     
     @IBAction func cookTimePounds(_ sender: Any) {
+        guard let poundsButton = sender as? UIButton else { return }
+        poundsButton.isSelected.toggle()
+        kilogramsButton.isSelected = false
+        weightLabel.text = "Weight (lbs):"
+        calculateCookTimePressed(sender)
     }
     
     @IBAction func cookTimeKilograms(_ sender: Any) {
+        guard let kilogramsButton = sender as? UIButton else { return }
+        kilogramsButton.isSelected.toggle()
+        poundsButton.isSelected = false
+        weightLabel.text = "Weight (kg):"
+        calculateCookTimePressed(sender)
     }
     
 
