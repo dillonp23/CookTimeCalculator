@@ -28,30 +28,49 @@ class ViewController: UIViewController {
     
     var unit: Weight = .pounds // Default unit used for calculation is in pounds
     
-    
     // MARK: - Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        poundsButton.isSelected = true
+        weightLabel.text = "Weight (lbs):"
     }
     
-    func calculateCookTime(with weight: Double) -> Double {
+    func calculateCookTime(with weight: Double, from unit: Weight) -> Double {
         var cookTime: Double
         
         if unit == .pounds {
-            cookTime = weight * 5
+            cookTime = weight * 15
         } else {
-            cookTime = weight * 10
+            if weight >= 4 {
+                cookTime = weight * 20 + 90
+            } else {
+                cookTime = weight * 20 + 70
+            }
         }
         
         return cookTime
+    }
+    
+    func convertToHours(minutes: Double) -> Double {
+        let timeInHours = minutes / 60
+        return timeInHours
     }
 
     @IBAction func calculateCookTimePressed(_ sender: Any) {
          guard let weightString = weightTextField.text, let weight = Double(weightString) else { return }
         
-       
+        if poundsButton.isSelected {
+            unit = .pounds
+        } else {
+            unit = .kilograms
+        }
+        
+        let cookTimeDouble = calculateCookTime(with: weight, from: unit)
+        let cookTimeInHours = convertToHours(minutes: cookTimeDouble)
+        
+        timeToCookTextField.text = "\(cookTimeInHours)"
+        
     }
     
     @IBAction func cookTimePounds(_ sender: Any) {
