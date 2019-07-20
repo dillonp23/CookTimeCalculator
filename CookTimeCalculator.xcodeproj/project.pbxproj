@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9279589622E257BE00218B91 /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9279589622E257BE00218B91 /* CookTimeCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookTimeCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9279589922E257BE00218B91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9279589B22E257BE00218B91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9279589E22E257BE00218B91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 		9279588D22E257BE00218B91 = {
 			isa = PBXGroup;
 			children = (
-				9279589822E257BE00218B91 /* TipCalculator */,
+				9279589822E257BE00218B91 /* CookTimeCalculator */,
 				9279589722E257BE00218B91 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,12 +46,12 @@
 		9279589722E257BE00218B91 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9279589622E257BE00218B91 /* TipCalculator.app */,
+				9279589622E257BE00218B91 /* CookTimeCalculator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9279589822E257BE00218B91 /* TipCalculator */ = {
+		9279589822E257BE00218B91 /* CookTimeCalculator */ = {
 			isa = PBXGroup;
 			children = (
 				9279589922E257BE00218B91 /* AppDelegate.swift */,
@@ -61,15 +61,15 @@
 				927958A222E257C000218B91 /* LaunchScreen.storyboard */,
 				927958A522E257C000218B91 /* Info.plist */,
 			);
-			path = TipCalculator;
+			path = CookTimeCalculator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9279589522E257BE00218B91 /* TipCalculator */ = {
+		9279589522E257BE00218B91 /* CookTimeCalculator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 927958A822E257C000218B91 /* Build configuration list for PBXNativeTarget "TipCalculator" */;
+			buildConfigurationList = 927958A822E257C000218B91 /* Build configuration list for PBXNativeTarget "CookTimeCalculator" */;
 			buildPhases = (
 				9279589222E257BE00218B91 /* Sources */,
 				9279589322E257BE00218B91 /* Frameworks */,
@@ -79,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = TipCalculator;
+			name = CookTimeCalculator;
 			productName = TipCalculator;
-			productReference = 9279589622E257BE00218B91 /* TipCalculator.app */;
+			productReference = 9279589622E257BE00218B91 /* CookTimeCalculator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +99,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9279589122E257BE00218B91 /* Build configuration list for PBXProject "TipCalculator" */;
+			buildConfigurationList = 9279589122E257BE00218B91 /* Build configuration list for PBXProject "CookTimeCalculator" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9279589522E257BE00218B91 /* TipCalculator */,
+				9279589522E257BE00218B91 /* CookTimeCalculator */,
 			);
 		};
 /* End PBXProject section */
@@ -289,7 +289,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dillonp.TipCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dillonp.CookTimeCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,7 +307,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dillonp.TipCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dillonp.CookTimeCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,7 +317,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9279589122E257BE00218B91 /* Build configuration list for PBXProject "TipCalculator" */ = {
+		9279589122E257BE00218B91 /* Build configuration list for PBXProject "CookTimeCalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				927958A622E257C000218B91 /* Debug */,
@@ -326,7 +326,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		927958A822E257C000218B91 /* Build configuration list for PBXNativeTarget "TipCalculator" */ = {
+		927958A822E257C000218B91 /* Build configuration list for PBXNativeTarget "CookTimeCalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				927958A922E257C000218B91 /* Debug */,
