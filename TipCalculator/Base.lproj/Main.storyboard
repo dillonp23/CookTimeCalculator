@@ -62,6 +62,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJ9-dO-RxQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
                                                 <state key="normal" title="Calculate Cook Time!"/>
+                                                <connections>
+                                                    <action selector="calculateCookTimePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dcO-Ik-riv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -71,15 +74,21 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="0cX-5a-uG5">
-                                <rect key="frame" x="155" y="433" width="104" height="30"/>
+                                <rect key="frame" x="140.5" y="433" width="133" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W06-in-Kef">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="52" height="30"/>
+                                        <state key="normal" title="Pounds"/>
+                                        <connections>
+                                            <action selector="cookTimePounds:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PZe-HW-apq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oib-OR-jjz">
-                                        <rect key="frame" x="58" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="64" y="0.0" width="69" height="30"/>
+                                        <state key="normal" title="Kilograms"/>
+                                        <connections>
+                                            <action selector="cookTimeKilograms:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BCD-lQ-2mc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -96,6 +105,8 @@
                     </view>
                     <connections>
                         <outlet property="cookTimeLabel" destination="M3Q-IU-TOl" id="XTM-Uf-Ndk"/>
+                        <outlet property="kilogramsButton" destination="oib-OR-jjz" id="Rnj-qY-01M"/>
+                        <outlet property="poundsButton" destination="W06-in-Kef" id="zMg-xe-XTR"/>
                         <outlet property="timeToCookTextField" destination="va3-FB-BOs" id="RCN-gN-9dG"/>
                         <outlet property="weightLabel" destination="1Ex-Yn-tKX" id="eau-wt-1P4"/>
                         <outlet property="weightTextField" destination="OUf-KX-26L" id="Wb0-mv-Fng"/>
